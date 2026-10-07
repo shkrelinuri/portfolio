@@ -1,169 +1,330 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <meta charset='UTF-8'>
-   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-   <meta name='viewport' content='width=device-width, initial-scale=1'>
-   <title>Nuri Shkreli's Portfolio</title>
-   <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11120f" />
+    <meta name="author" content="Nuri Shkreli" />
+    <meta name="description" content="Nuri Shkreli is a backend and web developer based in Tirana, Albania, building web apps and maintaining business computer systems." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://shkrelinuri.github.io/portfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shkrelinuri.github.io/portfolio/" />
+    <meta property="og:title" content="Nuri Shkreli | Backend &amp; Web Developer" />
+    <meta property="og:description" content="Backend and web developer based in Tirana, Albania. Web apps, backend systems, and practical IT support for businesses." />
+    <meta property="og:image" content="https://shkrelinuri.github.io/portfolio/logo-mark.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nuri Shkreli | Backend &amp; Web Developer" />
+    <meta name="twitter:description" content="Backend and web developer based in Tirana, Albania. Web apps, backend systems, and practical IT support for businesses." />
+    <meta name="twitter:image" content="https://shkrelinuri.github.io/portfolio/logo-mark.png" />
+    <title>Nuri Shkreli | Backend &amp; Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Nuri Shkreli",
+            "url": "https://shkrelinuri.github.io/portfolio/",
+            "jobTitle": "Backend and Web Developer",
+            "description": "Backend and web developer based in Tirana, Albania, with IT skills maintaining business computer systems.",
+            "address": { "@type": "PostalAddress", "addressLocality": "Tirana", "addressCountry": "AL" },
+            "sameAs": ["https://github.com/shkrelinuri", "https://www.instagram.com/shkrelinuri/"],
+            "knowsAbout": ["Backend development", "Web development", "App development", "Business IT support", "Computer systems maintenance"]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Nuri Shkreli | Backend and Web Developer",
+            "url": "https://shkrelinuri.github.io/portfolio/",
+            "description": "Portfolio of Nuri Shkreli, backend and web developer based in Tirana, Albania.",
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="page-grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Nuri Shkreli, home"><img class="wordmark-logo" src="logo-mark.png" alt="" /><span class="wordmark-divider" aria-hidden="true"></span><span class="wordmark-name">NURI SHKRELI</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#work">Work <span>01</span></a>
+        <a href="#services">Services <span>02</span></a>
+        <a href="#stack">Stack <span>03</span></a>
+        <a href="#about">About <span>04</span></a>
+      </nav>
+      <a class="header-contact" href="#contact">Have a project? <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+    </header>
 
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#work">Selected work <span>01</span></a>
+      <a href="#services">What I do <span>02</span></a>
+      <a href="#stack">Stack &amp; tools <span>03</span></a>
+      <a href="#about">A little about me <span>04</span></a>
+      <a href="#contact">Start a project <span>↗</span></a>
+    </nav>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-   <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
-   <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-   <!-- NAVBAR SECTION -->
-   <nav class="navbar">
-      <div class="full-width">
-         <div class="logo"><a href="#"><span>N</span>Shkreli<span>.</span></a></div>
-         <ul class="menu" >
-            <li><a href="#home" class="menu-btn" >Home</a></li>
-            <li><a href="#about" class="menu-btn">About</a></li>
-            <li><a href="#skills" class="menu-btn">Skills</a></li>
-            <li><a href="#contact" class="menu-btn">Contact</a></li>
-         </ul>
-
-         <div class="menu-btn">
-            <i class="fas fa-bars "> </i>
-         </div>
-      </div>
-   </nav>
-
-   <!-- HOME SECTION -->
-
-   <section class="home" id="home">
-      <div class="full-width">
-         <div class="home-content">
-            <div class="text1">Hi! My name is</div>
-            <div class="text2">Nuri Shkreli.</div>
-            <div class="text3">And I am a <span class="typing"></span></div>
-            <a href="#contact">Get in touch</a>
-         </div>
-      </div>
-   </section>
-
-  <!--ABOUT SECTION-->
-
-
-  <section class="about" id="about">
-   <div class="full-width">
-      <h2 class="title">About me.</h2>
-         <div class="about-content">
-            <div class="column left">
-               <img src="./images/about.jpg" alt="">
+    <main id="top">
+      <section class="hero section-wrap" aria-labelledby="hero-title">
+        <div class="hero-meta mono"><span>INDEPENDENT DEVELOPER</span><span>TIRANA, ALBANIA · AVAILABLE REMOTELY</span></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-mark"></span> Design-minded. Detail-driven.</p>
+            <h1 id="hero-title">I make digital<br />things <span class="hero-accent">make sense.</span></h1>
+            <div class="hero-bottom">
+              <p class="hero-intro">I'm Nuri Shkreli, an independent developer turning good ideas into thoughtful websites and useful apps.</p>
+              <a class="round-link" href="#work" aria-label="Explore selected work"><span>↓</span></a>
             </div>
-            <div class="column right">
-               <div class="text">I am Nuri Shkreli and I am a <span class="typing-2"></span></div>
-               <p>I am a 19 years old web developer from Albania. I started coding at the age of 17 and since then I have been practising multiple skills regarding programming. </p><br>
-               <p>Adress: Shkoder, Albania</p>
-               <p>Email: shkrelinuri@gmail.com</p>
-               <a href="#">Download CV</a>
-         </div>
-      </div>
-   </div>
-</section>
+          </div>
+          <div class="hero-art" aria-label="A preview of a digital product interface">
+            <div class="art-top mono"><span>LL / FIELD NOTES</span><span>PRODUCT 001</span></div>
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-core"><span>IDEA</span><b>→</b><span>INTERFACE</span></div>
+            <div class="art-stamp">BUILT<br />WITH<br />INTENT</div>
+            <div class="art-caption mono"><span>STRATEGY + DESIGN + CODE</span><span>EST. IN CURIOSITY</span></div>
+            <span class="art-cross cross-one" aria-hidden="true">+</span>
+            <span class="art-cross cross-two" aria-hidden="true">+</span>
+          </div>
+        </div>
+        <div class="hero-footer mono"><span>SCROLL TO EXPLORE</span><span>AVAILABLE FOR SELECT PROJECTS <i class="availability-dot"></i></span></div>
+      </section>
 
-<!-- SKILLS SECTION -->
-<section class="skills" id="skills">
-   <div class="full-width">
-      <h2 class="title">My Skills.</h2>
-      <div class="skills-content">
-         <div class="column-1">
-            <div class="text">My skills and experience.</div>
-            <p>Through years of practice in programming I have managed to learn a set of pretty valuable skills. These skills include Wordpress, Python, HTML/Css, Javascript, Mysql and more.</p>
-         <a href="#">Read more</a>      
-         </div>
-               <div class="column-2">   
-                  <div class="bars">
-                           <div class="information">
-                              <span>Wordpress</span>
-                              <span>50%</span> 
-                     </div>
-                     <div class="line php"></div>
+      <section class="work section-wrap" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div><p class="eyebrow mono">01 / SELECTED WORK</p><h2 id="work-title">Different problems.<br /><span>Thoughtful builds.</span></h2></div>
+          <p class="section-note">A selection of products I've designed and developed, from first sketch to final detail.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-music" data-project="music">
+              <button class="project-open" type="button" aria-label="Read about Music Player">
+              <div class="project-visual music-visual">
+                <div class="music-window">
+                  <div class="mock-top"><span class="mock-dots">● ● ●</span><span>YOUR SOUND, IN ONE PLACE</span><span>⌕</span></div>
+                  <div class="music-content">
+                    <div class="music-sidebar"><b>NS / MUSIC</b><span>⌂ &nbsp; Home</span><span>▤ &nbsp; Library</span><span>♡ &nbsp; Favorites</span><small>YOUR COLLECTION</small><span>Mixes for later</span></div>
+                    <div class="music-main"><p class="mono">GOOD EVENING</p><h3>Find your<br />next favorite.</h3><div class="album-row"><img src="cover1.jpg" alt="Album artwork from the music app project" /><div><b>On repeat</b><small>Curated for you</small></div><span>▶</span></div></div>
                   </div>
-               <div class="bars">
-                  <div class="information">
-                     <span>HTML</span>
-                     <span>95%</span>     
-             </div>
-             <div class="line html"></div>
-            </div>
-                     
-                  <div class="bars">
-                     <div class="information">
-                        <span>MY SQL</span>
-                        <span>40%</span>  
-               </div>
-               <div class="line sql"></div>
-            </div>
-            <div class="bars">
-               <div class="information">
-                  <span>CSS</span>
-                  <span>85%</span>
-            </div>
-            <div class="line css"></div>
-            </div>
-               <div class="bars">
-                  <div class="information">
-                     <span>JavaScript</span>
-                     <span>50%</span>   
-               </div>
-               <div class="line js"></div>
-               </div>
-           </div>
+                  <div class="music-player"><span>♫ &nbsp; Now playing</span><span class="equalizer"><i></i><i></i><i></i><i></i><i></i></span><span>03:18 ━━━━━━ 04:02</span></div>
+                </div>
+                <span class="visual-index mono">PROJECT 01</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">WEB APP · MUSIC</p><h3>Music Player</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">A personal music library shaped around discovery, playlists, and the small joy of pressing play.</p>
+              <div class="tag-row"><span>HTML / CSS</span><span>JAVASCRIPT</span><span>INTERACTION</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-store" data-project="store">
+            <button class="project-open" type="button" aria-label="Read about Online Store">
+              <div class="project-visual store-visual">
+                <div class="store-window">
+                  <div class="store-top"><span>OBJECTS / STUDIO</span><span>SHOP &nbsp; JOURNAL &nbsp; BAG (02)</span></div>
+                  <div class="store-banner"><span>MADE FOR<br />EVERYDAY.</span><i>✳</i></div>
+                  <div class="store-products"><div class="product product-a"><span class="vase vase-a"></span><small>FORM VASE / $48</small></div><div class="product product-b"><span class="vase vase-b"></span><small>STUDY LAMP / $120</small></div><div class="product product-c"><span class="vase vase-c"></span><small>SOFT FORM / $36</small></div></div>
+                </div>
+                <span class="visual-index mono">PROJECT 02</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">ECOMMERCE · FULL STACK</p><h3>Online Store</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">A complete storefront experience, pairing a considered shopping journey with a dedicated server.</p>
+              <div class="tag-row"><span>REACT</span><span>NODE.JS</span><span>API</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-resume" data-project="resume">
+            <button class="project-open" type="button" aria-label="Read about Resume Score">
+              <div class="project-visual resume-visual">
+                <div class="resume-window">
+                  <div class="resume-top mono"><span>CAREER / TOOLS</span><span>YOUR NEXT MOVE</span></div>
+                  <div class="resume-body"><div class="resume-copy"><span class="mono">RESUME CHECK / 01</span><h3>Make your<br />next move count.</h3><p>Clear feedback for a stronger first impression.</p><span class="resume-upload">↑ &nbsp; Upload your resume</span></div><div class="score-sheet"><span class="mono">YOUR SCORE</span><b>86</b><span class="score-line"></span><small>STRONG FOUNDATION</small><div class="score-bars"><i></i><i></i><i></i></div></div></div>
+                </div>
+                <span class="visual-index mono">PROJECT 03</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">CAREER TOOL · DOCUMENTS</p><h3>Resume Score</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">A focused resume-review tool that helps job seekers get useful signals before they apply.</p>
+              <div class="tag-row"><span>NEXT.JS</span><span>REACT</span><span>DOCUMENTS</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-chess" data-project="chess">
+            <button class="project-open" type="button" aria-label="Read about Chess Talent Estimator">
+              <div class="project-visual chess-visual">
+                <div class="chess-window">
+                  <div class="chess-top mono"><span>CHESS / TALENT ESTIMATOR</span><span>01 — 10</span></div>
+                  <div class="chess-board" aria-hidden="true"><span>♜</span><span></span><span>♝</span><span></span><span></span><span>♟</span><span></span><span>♚</span><span></span><span>♟</span><span></span><span></span><span>♙</span><span></span><span>♙</span><span></span></div>
+                  <div class="chess-prompt"><span class="mono">FIND THE BEST MOVE</span><b>Your next move<br />is the whole point.</b><span class="chess-button">MAKE A MOVE &nbsp; ↗</span></div>
+                </div>
+                <span class="visual-index mono">PROJECT 04</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">INTERACTIVE APP · CHESS</p><h3>Chess Talent Estimator</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">A puzzle-led chess assessment with account access, instant results, and an optional deeper breakdown.</p>
+              <div class="tag-row"><span>NEXT.JS</span><span>SUPABASE</span><span>CHESS.JS</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-mog" data-project="mog">
+            <button class="project-open" type="button" aria-label="Read about Facial Analysis Software">
+              <div class="project-visual mog-visual">
+                <div class="mog-window">
+                  <div class="mog-top mono"><span>FACIAL ANALYSIS / STUDIO</span><span>YOUR PRIVATE SPACE</span></div>
+                  <div class="mog-body"><div class="mog-side"><span>01 &nbsp; PROFILE</span><span>02 &nbsp; PHOTOS</span><span>03 &nbsp; REPORT</span></div><div class="mog-report"><span class="mono">PERSONALIZED ANALYSIS</span><div class="portrait-shape"><i></i></div><h3>Your profile,<br />thoughtfully reviewed.</h3><div class="report-line"></div><div class="report-line short"></div><span class="mog-privacy mono">PRIVATE BY DESIGN · CONSENT FIRST</span></div></div>
+                </div>
+                <span class="visual-index mono">PROJECT 05</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">PHOTO ANALYSIS · MOBILE READY</p><h3>Facial Analysis Software</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">A web-first portrait feedback app with consent-led uploads, account access, and a mobile path.</p>
+              <div class="tag-row"><span>REACT</span><span>CAPACITOR</span><span>AI INTEGRATION</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-endgame" data-project="endgame">
+            <button class="project-open" type="button" aria-label="Read about Endgame Chess">
+              <div class="project-visual endgame-visual">
+                <div class="endgame-window">
+                  <div class="endgame-top mono"><span>ENDGAME / ONLINE</span><span>BLITZ 3 + 2</span></div>
+                  <div class="endgame-body"><div class="endgame-board" aria-hidden="true"><span>♜</span><span></span><span>♞</span><span>♟</span><span></span><span>♝</span><span></span><span>♚</span><span>♙</span><span></span><span>♙</span><span></span><span></span><span>♖</span><span></span><span>♔</span></div><div class="endgame-status"><span class="mono">LIVE MATCH</span><b>03:12</b><span>White to move</span><div class="move-line">18. Nf6+ &nbsp; Kg7</div><div class="move-line">19. Re7 &nbsp; ...</div><span class="game-status">CONNECTED <i></i></span></div></div>
+                </div>
+                <span class="visual-index mono">PROJECT 06</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">MULTIPLAYER GAME · CROSS-PLATFORM</p><h3>Endgame Chess</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">Play Stockfish or a live opponent, with server-authoritative online moves and clocks.</p>
+              <div class="tag-row"><span>NEXT.JS</span><span>SOCKET.IO</span><span>STOCKFISH 19</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-proxy" data-project="proxy">
+            <button class="project-open" type="button" aria-label="Read about Proxy Provider Platform">
+              <div class="project-visual proxy-visual">
+                <div class="proxy-window">
+                  <div class="proxy-top mono"><span>RELAY / CONTROL</span><span>ADMIN / OVERVIEW</span></div>
+                  <div class="proxy-body"><div class="proxy-nav"><b>RELAY</b><span>Overview</span><span>Customers</span><span>Usage</span><span>Plans &amp; billing</span></div><div class="proxy-main"><span class="mono">NETWORK HEALTH / LIVE</span><div class="proxy-stats"><div><small>ACTIVE NODES</small><b>08</b></div><div><small>USAGE TODAY</small><b>2.4 TB</b></div><div><small>REQUESTS / MIN</small><b>1,284</b></div></div><div class="proxy-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="proxy-chart-label mono">METERED TRAFFIC / 24 HOURS</span></div></div>
+                </div>
+                <span class="visual-index mono">PROJECT 07</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">FULL STACK PLATFORM · INFRASTRUCTURE</p><h3>Proxy Provider Platform</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">Customer and admin dashboards with subscription billing, metered usage, and proxy gateway integrations.</p>
+              <div class="tag-row"><span>REACT</span><span>NODE.JS</span><span>REDIS · STRIPE</span></div>
+            </button>
+          </article>
+
+          <article class="project-card project-murlan" data-project="murlan">
+            <button class="project-open" type="button" aria-label="Read about Murlan Pro">
+              <div class="project-visual murlan-visual">
+                <div class="murlan-window">
+                  <div class="murlan-top mono"><span>MURLAN PRO / TABLE 01</span><span>IN DEVELOPMENT</span></div>
+                  <div class="murlan-table"><div class="table-mark">M</div><span class="player-seat seat-top">PLAYER 02 <b>•••</b></span><span class="player-seat seat-left">PLAYER 03 <b>•••</b></span><span class="player-seat seat-right">PLAYER 04 <b>•••</b></span><div class="table-center"><span class="mono">A TABLE FOR FOUR</span><b>Albanian Murlan,<br />together online.</b><span>SERVER-VALIDATED PLAY</span></div><div class="hand-cards"><i>7</i><i>J</i><i class="red-card">Q</i><i>K</i><i class="red-card">A</i></div></div>
+                </div>
+                <span class="visual-index mono">PROJECT 08 · IN PROGRESS</span>
+              </div>
+              <div class="project-info"><div><p class="mono project-type">IN PROGRESS · MULTIPLAYER CARD GAME</p><h3>Murlan Pro</h3></div><span class="project-arrow" aria-hidden="true">↗</span></div>
+              <p class="project-summary">An early cross-platform build inspired by Albanian Murlan rules, with a Flutter app shell and server-authoritative game architecture.</p>
+              <div class="tag-row"><span>FLUTTER</span><span>NODE.JS</span><span>SOCKET.IO</span></div>
+            </button>
+          </article>
+        </div>
+        <p class="work-footnote mono">PERSONAL BUILDS · SELECTED WITH INTENT</p>
+      </section>
+
+      <section class="services section-wrap" id="services" aria-labelledby="services-title">
+        <div class="section-heading services-heading">
+          <div><p class="eyebrow mono">02 / WHAT I DO</p><h2 id="services-title">From first sketch<br />to <span>shipped product.</span></h2></div>
+          <p class="section-note">One thoughtful partner for the hard parts, the fine details, and everything that connects them.</p>
+        </div>
+        <div class="service-list">
+          <article class="service-row"><span class="service-number mono">01</span><div><h3>Websites that work hard</h3><p>Distinctive, responsive websites that make the right first impression and guide visitors toward action.</p></div><span class="service-symbol" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-number mono">02</span><div><h3>Apps built around people</h3><p>Useful web and mobile experiences, designed for real workflows instead of feature checklists.</p></div><span class="service-symbol" aria-hidden="true">⌘</span></article>
+          <article class="service-row"><span class="service-number mono">03</span><div><h3>Full-stack development</h3><p>Frontend, backend, integrations, and the dependable details that make a product feel complete.</p></div><span class="service-symbol" aria-hidden="true">⌁</span></article>
+          <article class="service-row"><span class="service-number mono">04</span><div><h3>Product polish &amp; improvements</h3><p>Sharper flows, cleaner interfaces, and practical upgrades to products that are already in motion.</p></div><span class="service-symbol" aria-hidden="true">✳</span></article>
+          <article class="service-row"><span class="service-number mono">05</span><div><h3>Backend systems &amp; APIs</h3><p>Reliable application logic, data flows, integrations, and APIs built to support real products.</p></div><span class="service-symbol" aria-hidden="true">⌘</span></article>
+          <article class="service-row"><span class="service-number mono">06</span><div><h3>Business IT &amp; computer systems</h3><p>Practical setup, maintenance, and troubleshooting for the computer systems businesses rely on every day.</p></div><span class="service-symbol" aria-hidden="true">⌁</span></article>
+        </div>
+      </section>
+
+      <section class="stack section-wrap" id="stack" aria-labelledby="stack-title">
+        <div class="stack-heading">
+          <div><p class="eyebrow mono">03 / TOOLS BY LAYER</p><h2 id="stack-title">The stack behind<br /><span>the work.</span></h2></div>
+          <p class="section-note">Technologies used across the projects above, grouped by the part they play.</p>
+        </div>
+        <div class="stack-list">
+          <article class="stack-row"><span class="stack-layer mono">01 / PRODUCT</span><div class="stack-detail"><h3>Interfaces &amp; web apps</h3><div class="tag-row"><span>REACT</span><span>NEXT.JS</span><span>VITE</span><span>HTML / CSS</span></div></div></article>
+          <article class="stack-row"><span class="stack-layer mono">02 / APPLICATION</span><div class="stack-detail"><h3>Backend &amp; realtime</h3><div class="tag-row"><span>NODE.JS</span><span>EXPRESS</span><span>REST APIS</span><span>SOCKET.IO</span></div></div></article>
+          <article class="stack-row"><span class="stack-layer mono">03 / DATA</span><div class="stack-detail"><h3>Storage &amp; integrations</h3><div class="tag-row"><span>SUPABASE</span><span>POSTGRESQL</span><span>REDIS</span><span>STRIPE</span></div></div></article>
+          <article class="stack-row"><span class="stack-layer mono">04 / MOBILE &amp; PLAY</span><div class="stack-detail"><h3>Cross-platform &amp; interactive</h3><div class="tag-row"><span>CAPACITOR</span><span>FLUTTER · IN PROGRESS</span><span>CHESS.JS</span><span>STOCKFISH</span></div></div></article>
+        </div>
+      </section>
+
+      <section class="about section-wrap" id="about" aria-labelledby="about-title">
+        <div class="about-index mono">04 / A LITTLE ABOUT ME</div>
+        <div class="about-content"><h2 id="about-title">Good software should feel <span>obvious</span> after someone makes it.</h2><div class="about-lower"><p>I'm Nuri Shkreli, a 24-year-old backend and web developer originally from Shkodër and currently based in Tirana, Albania. I build websites and applications, develop backend features, and bring practical IT skills to maintaining and troubleshooting business computer systems. I enjoy making technology dependable and easier for people to use.</p><a class="text-link" href="#contact">Let's make something useful <span>↗</span></a></div></div>
+        <div class="about-mark" aria-hidden="true">NS<span>.</span></div>
+      </section>
+
+      <section class="contact section-wrap" id="contact" aria-labelledby="contact-title">
+        <div class="contact-top"><p class="eyebrow mono">05 / YOUR NEXT PROJECT</p><span class="contact-stamp mono"><i class="availability-dot"></i> OPEN FOR SELECT WORK</span></div>
+        <div class="contact-grid"><div><h2 id="contact-title">Have a good<br />one in mind<span>?</span></h2><p class="contact-intro">Tell me what you're working on. A rough idea is a perfectly good place to start.</p></div>
+          <form class="contact-form" id="contact-form">
+            <label for="name">YOUR NAME</label><input id="name" name="name" autocomplete="name" placeholder="What should I call you?" required />
+            <label for="email">EMAIL ADDRESS</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+            <label for="project-type">WHAT KIND OF PROJECT?</label><select id="project-type" name="projectType" required><option value="" selected disabled>Choose a project type</option><option>Website</option><option>Web or mobile app</option><option>Backend or API</option><option>Ecommerce</option><option>Business IT support</option><option>Computer systems maintenance</option><option>AI integration</option><option>Improving an existing product</option><option>Not sure yet</option></select>
+            <label for="project">A LITTLE ABOUT THE PROJECT</label><textarea id="project" name="project" rows="3" placeholder="What are you hoping to build?" required></textarea>
+            <button class="submit-button" type="submit"><span>Send project inquiry</span><span aria-hidden="true">↗</span></button>
+            <p class="form-note" id="form-note" role="status" aria-live="polite">Opens Gmail with your inquiry ready to send.</p>
+            <a class="form-fallback" id="gmail-fallback" href="#" target="_blank" rel="noopener noreferrer" hidden>Open your Gmail draft <span aria-hidden="true">↗</span></a>
+          </form>
+        </div>
+        <div class="contact-bottom mono"><span>GOOD THINGS START WITH A CONVERSATION.</span><a href="#top">BACK TO TOP ↑</a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="footer-name" href="#top">NURI SHKRELI<span>.</span></a>
+          <p>Independent developer building clear, useful websites and apps.</p>
+          <a class="footer-email" id="footer-email" href="#contact">Email Nuri <span aria-hidden="true">↗</span></a>
+          <div class="footer-socials" aria-label="Social and contact links">
+            <a href="https://www.instagram.com/shkrelinuri/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/shkrelinuri" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://wa.me/355676489460" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <nav class="footer-column" aria-label="Footer navigation">
+          <p class="footer-label mono">EXPLORE</p>
+          <a href="#work">Selected work</a>
+          <a href="#services">Services</a>
+          <a href="#stack">Stack &amp; tools</a>
+          <a href="#about">About</a>
+        </nav>
+        <div class="footer-column">
+          <p class="footer-label mono">SERVICES</p>
+          <a href="#services">Websites</a>
+          <a href="#services">Web &amp; mobile apps</a>
+          <a href="#services">Full-stack development</a>
+        </div>
+        <div class="footer-column footer-contact-column">
+          <p class="footer-label mono">START A PROJECT</p>
+          <p>Have an idea or need a hand improving what you have?</p>
+          <a class="footer-cta" href="#contact">Tell me about it <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-   </div>
-</section>
-
-
-
-<!--Contact form section-->
-<section class="contact" id="contact">
-   <div class="full-width">
-      <h2 class="title">Contact me.</h2>
-      <div class="contact-content">
-         <div class="column-right" >
-            <div class="text">Send me a message.</div>
-            <div class="fields">
-               <form
-               action="https://formspree.io/f/xgervjqd"
-               method="POST"
-             >
-            <input class="field1" name="text" type="text" placeholder="Your Name" required><br>
-            <input class="field2" name="_replyto" type="email" placeholder="Your Email" required></br>
-            <input class="field3" name="message" type="message" placeholder="Write Something" required><br>
-            <input type="submit" value="Send" class="send">
-         </form>
+      <div class="footer-bottom mono">
+        <span>© <span id="year"></span> NURI SHKRELI</span>
+        <span>INDEPENDENT DEVELOPER · WEB &amp; APP</span>
+        <a href="#top">BACK TO TOP ↑</a>
       </div>
-            
-         </div>
-      <div class="column-left">
-         <div class="text">Get in touch.</div>
-         <div class="info">
-            <p class="name">Name: Nuri Shkreli </p>
-            <p class="adress">Adress: Shkoder/Tirana, Albania</p>
-            <p class="email">Email: shkrelinuri@gmail.com</p>
-            
-         </div>
-      </div>
+    </footer>
 
-       </div>
-         </div>
-      </div>
-      </div>
-      </div>
-   </div>
-</section>
-
-<!--Footer section-->
-<footer>
-   <span>Created And Designed By <a href="#">Nuri Shkreli</a> | <span class="far fa copyright"></span> 2021 All Rights Reserved. </span>
-</footer>
-
-   <script src='script.js'></script>
-
-</body>
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <p class="eyebrow mono" id="dialog-type"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-tags" id="dialog-tags"></div><a class="dialog-cta" href="#contact">Discuss a similar project <span>↗</span></a>
+    </dialog>
+  </body>
 </html>

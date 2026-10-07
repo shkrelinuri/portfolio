@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shkrelinuri.github.io/portfolio/sitemap.xml
