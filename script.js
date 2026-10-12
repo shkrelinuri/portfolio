@@ -207,17 +207,64 @@ dialog.querySelector(".dialog-cta").addEventListener("click", closeDialog);
 
 const menuButton = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector("#mobile-nav");
-menuButton.addEventListener("click", () => {
+let navOpenScrollY = 0;
+
+function closeMobileNav() {
+  if (mobileNav && !mobileNav.hidden) {
+    mobileNav.hidden = true;
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open navigation");
+  }
+}
+
+function openMobileNav() {
+  if (mobileNav) {
+    navOpenScrollY = window.scrollY;
+    mobileNav.hidden = false;
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "Close navigation");
+  }
+}
+
+menuButton.addEventListener("click", (event) => {
+  event.stopPropagation();
   const expanded = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!expanded));
-  menuButton.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
-  mobileNav.hidden = expanded;
+  if (expanded) {
+    closeMobileNav();
+  } else {
+    openMobileNav();
+  }
 });
-mobileNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-  mobileNav.hidden = true;
-  menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-label", "Open navigation");
-}));
+
+mobileNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    closeMobileNav();
+  });
+});
+
+// Close mobile navigation when clicking outside of it
+document.addEventListener("click", (event) => {
+  if (mobileNav && !mobileNav.hidden) {
+    if (!mobileNav.contains(event.target) && !menuButton.contains(event.target)) {
+      closeMobileNav();
+    }
+  }
+});
+
+// Close mobile navigation when scrolling down or moving
+window.addEventListener("scroll", () => {
+  if (mobileNav && !mobileNav.hidden) {
+    if (Math.abs(window.scrollY - navOpenScrollY) > 15) {
+      closeMobileNav();
+    }
+  }
+}, { passive: true });
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && mobileNav && !mobileNav.hidden) {
+    closeMobileNav();
+  }
+});
 
 const contactForm = document.querySelector("#contact-form");
 const formNote = document.querySelector("#form-note");
