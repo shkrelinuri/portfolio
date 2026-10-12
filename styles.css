@@ -36,7 +36,9 @@ button { color: inherit; }
 .main-nav a:hover, .header-contact:hover { color: var(--acid); }
 .main-nav a span { margin-left: 4px; font: 9px var(--mono); color: #74766d; vertical-align: top; }
 .header-contact span { color: var(--acid); font-size: 15px; margin-left: 9px; }
-.menu-toggle, .mobile-nav { display: none; }
+.menu-toggle { display: none; }
+.mobile-nav { display: none; }
+.mobile-nav:not([hidden]) { display: flex; }
 .hero { min-height: 660px; padding-top: 30px; display: flex; flex-direction: column; }
 .hero-meta, .hero-footer { display: flex; justify-content: space-between; color: #85877e; font-size: 9px; }
 .hero-meta span:last-child { text-align: right; }
@@ -246,7 +248,7 @@ h1, h2, h3, p { margin-top: 0; }
 .footer-socials a { border: 1px solid #3b3d35; border-radius: 3px; padding: 7px 8px; color: #c4c5bb; font: 8px var(--mono); transition: color .2s ease, border-color .2s ease, background .2s ease; }
 .footer-socials a:hover { color: var(--acid); border-color: rgba(213, 243, 106, .55); background: rgba(213, 243, 106, .05); }
 
-@media (max-width: 900px) and (min-width: 601px) {
+@media (max-width: 900px) and (min-width: 769px) {
   .main-nav { gap: 14px; margin-right: 16px; }
   .main-nav a { font-size: 10px; }
   .header-contact { padding-inline: 9px; font-size: 9px; }
@@ -254,20 +256,21 @@ h1, h2, h3, p { margin-top: 0; }
   .wordmark > .wordmark-name { font-size: 10px; }
 }
 
-@media (max-width: 600px) {
-  .site-header { width: 100%; height: 76px; padding-inline: 22px; }
+@media (max-width: 768px) {
+  .site-header { width: 100%; height: 76px; padding-inline: 20px; }
+  .main-nav, .header-contact { display: none !important; }
   .wordmark { gap: 10px; }
   .wordmark-logo { width: 58px; height: 36px; }
   .wordmark > .wordmark-name { display: none; }
   .wordmark > .wordmark-divider { display: none; }
-  .menu-toggle { width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; border: 1px solid #4a4d40; border-radius: 8px; background: #1c1e19; cursor: pointer; transition: border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+  .menu-toggle { width: 44px; height: 44px; display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; border: 1px solid #4a4d40; border-radius: 8px; background: #1c1e19; cursor: pointer; transition: border-color .2s ease, background .2s ease, box-shadow .2s ease; z-index: 35; }
   .menu-toggle:hover { border-color: var(--acid); background: #23271f; box-shadow: 0 0 10px rgba(213, 243, 106, .12); }
   .menu-toggle span { width: 20px; height: 2px; border-radius: 2px; background: var(--paper); display: block; transform-origin: center; transition: transform .25s cubic-bezier(.4, 0, .2, 1), opacity .2s ease, background .2s ease; }
   .menu-toggle:hover span { background: var(--acid); }
   .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-nav:not([hidden]) { position: fixed; z-index: 30; top: 84px; right: auto; left: 50%; width: min(440px, calc(100vw - 32px)); padding: 10px 16px 16px; transform: translateX(-50%); border: 1px solid #44463d; border-radius: 6px; background: rgba(24, 26, 22, .98); box-shadow: 0 20px 55px rgba(0, 0, 0, .55); backdrop-filter: blur(18px); animation: menu-enter .2s ease-out both; }
+  .mobile-nav:not([hidden]) { position: fixed; z-index: 30; top: 84px; right: auto; left: 50%; width: min(440px, calc(100vw - 32px)); display: flex !important; flex-direction: column; padding: 10px 16px 16px; transform: translateX(-50%); border: 1px solid #44463d; border-radius: 6px; background: rgba(24, 26, 22, .98); box-shadow: 0 20px 55px rgba(0, 0, 0, .55); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); animation: menu-enter .2s ease-out both; }
   .mobile-nav a { min-height: 48px; align-items: center; padding: 12px 2px; border-bottom-color: rgba(239, 238, 231, .1); }
   .mobile-nav a:hover { color: var(--acid); }
   #mobile-nav a:last-child { margin-top: 10px; padding: 13px 12px; border: 0; border-radius: 3px; background: var(--acid); color: var(--ink); font-weight: 700; }
