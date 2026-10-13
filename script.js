@@ -317,9 +317,18 @@ footerEmail.href = `mailto:${CONTACT_EMAIL}`;
 footerEmail.textContent = CONTACT_EMAIL;
 footerEmail.setAttribute("aria-label", "Email Nuri Shkreli");
 
-const revealTargets = document.querySelectorAll(".section-heading, .project-card, .service-row, .about-content, .contact-grid");
+const revealTargets = document.querySelectorAll(".section-heading, .project-card, .service-row, .stack-heading, .stack-row, .about-content, .contact-grid");
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   revealTargets.forEach((target) => target.classList.add("reveal"));
+  
+  // Apply subtle stagger classes to sequential siblings in lists/grids
+  document.querySelectorAll(".project-grid, .service-list, .stack-list").forEach((container) => {
+    container.querySelectorAll(".project-card, .service-row, .stack-row").forEach((child, idx) => {
+      const staggerIndex = (idx % 4) + 1;
+      child.classList.add(`reveal-stagger-${staggerIndex}`);
+    });
+  });
+
   const observer = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -327,6 +336,6 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
         currentObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
   revealTargets.forEach((target) => observer.observe(target));
 }
